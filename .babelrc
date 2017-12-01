@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    "transform-class-properties",
+    "transform-decorators",
+    "react-hot-loader/babel",
+    "transform-object-rest-spread"
+  ],
+  "presets": ["env", "react"]
+}
