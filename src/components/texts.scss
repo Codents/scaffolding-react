@@ -1,0 +1,14 @@
+.h1-xl {
+  font-size: 2em;
+  font-family: sans-serif;
+}
+
+.text {
+  &.common {
+    font-size: 1.2em;
+    font-family: cursive;
+  }
+  &.justify {
+    text-align: justify;
+  }
+}

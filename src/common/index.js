@@ -1,5 +1,5 @@
-import paths from 'paths';
-import services from 'services';
-import utils  from 'utils';
+import * as paths from './paths';
+import * as services from './services';
+import * as utils from './utils';
 
-export { paths, services, ...utils };
+export { paths, services, utils };

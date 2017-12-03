@@ -1,5 +1,5 @@
 module.exports = {
-  extends: 'airbnb-base',
+  extends: ['airbnb-base', 'plugin:react/recommended'],
   parserOptions: {
     ecmaVersion: 8,
     sourceType: 'module',
@@ -12,6 +12,10 @@ module.exports = {
       blockBindings: true,
       arrowFunctions: true,
     },
+  },
+  globals: {
+    VERSION: true,
+    API: true,
   },
   env: {
     browser: true,
@@ -42,6 +46,8 @@ module.exports = {
     'jsx-quotes': [2, 'prefer-single'],
     'jsx-a11y/media-has-caption': 0,
     'react/forbid-prop-types': 0,
+    'react/jsx-curly-spacing': [2, "always"],
+    'react/jsx-uses-vars': [2],
     'react/jsx-filename-extension': 0,
     'react/jsx-boolean-value': 0,
     'react/prefer-stateless-function': 0,

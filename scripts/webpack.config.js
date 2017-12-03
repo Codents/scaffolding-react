@@ -9,7 +9,7 @@ module.exports = function (env) {
     devtool: config.devTool(env.env),
     context: defaults.paths.source,
     entry: config.entries(env.env),
-    output: config.output(env.env),
+    output: config.output(),
     module: {
       rules: rules(env.env),
     },
@@ -17,7 +17,7 @@ module.exports = function (env) {
       extensions: config.extensions(),
       modules: config.modules(),
     },
-    plugins: plugins(env.env),
+    plugins: plugins(env),
     devServer: config.devServer(env.env),
   };
 };

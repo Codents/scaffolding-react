@@ -1,9 +1,60 @@
 {
-  "plugins": [
-    "transform-class-properties",
-    "transform-decorators",
-    "react-hot-loader/babel",
-    "transform-object-rest-spread"
-  ],
-  "presets": ["env", "react"]
+  "env": {
+    "prod": {
+      "babelrc": false,
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "browsers": [
+                "last 2 versions",
+                "ios_saf >= 8",
+                "not IE <= 10",
+                "chrome >= 49",
+                "firefox >= 49",
+                "> 1%"
+              ]
+            },
+            "debug": false,
+            "loose": true,
+            "modules": false,
+            "useBuiltIns": true
+          }
+        ],
+        "react"
+      ],
+      "plugins": [
+        [
+          "transform-object-rest-spread",
+          {
+            "useBuiltIns": true
+          }
+        ],
+        "transform-flow-strip-types"
+      ]
+    },
+    "dev": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "browsers": "> 5%"
+            }
+          }
+        ],
+        "react"
+      ],
+      "plugins": [
+        [
+          "transform-object-rest-spread",
+          {
+            "useBuiltIns": true
+          }
+        ],
+        "transform-flow-strip-types"
+      ]
+    }
+  }
 }

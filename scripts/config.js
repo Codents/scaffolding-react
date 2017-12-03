@@ -1,19 +1,18 @@
 const defaults = require('./defaults');
 
 function prodEntries() {
-  return ['app.js'];
+  return ['babel-polyfill', 'app.js'];
 }
 
 function devEntries() {
   return [
-    'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
     'app.js',
   ];
 }
 
-function entries (env) {
+function entries(env) {
   return env === defaults.env.prod ? prodEntries() : devEntries();
 }
 
@@ -50,16 +49,16 @@ function modules() {
   return ['node_modules', defaults.paths.source];
 }
 
-function output(env) {
+function output() {
   return {
     path: defaults.paths.build,
-    publicPath: env === defaults.env.prod ? './' : '/',
-    filename: 'app.js',
+    publicPath: '/',
+    filename: '[name].[chunkhash].js',
   };
 }
 
 function devTool(env) {
-  return env === defaults.env.prod ? false : 'source-map';
+  return env === defaults.env.prod ? 'cheap-module-source-map' : 'source-map';
 }
 
 module.exports = {
