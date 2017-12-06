@@ -53,7 +53,7 @@ function output() {
   return {
     path: defaults.paths.build,
     publicPath: '/',
-    filename: '[name].[chunkhash].js',
+    filename: '[name].[chunkhash].js'
   };
 }
 

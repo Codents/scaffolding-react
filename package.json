@@ -4,9 +4,9 @@
   "description": "Estructura base para proyecto modular y escalable con react + redux + webpack + babel",
   "main": "index.js",
   "scripts": {
-    "watch": "BABEL_ENV=dev node node_modules/webpack-dev-server/bin/webpack-dev-server.js --config ./scripts/webpack.config.js --colors --no-info --env.env='dev' --env.version='0.0.1-test'",
-    "build": "BABEL_ENV=prod node node_modules/webpack/bin/webpack.js --config ./scripts/webpack.config.js --progress --profile --colors --env.env='prod' --env.version='0.0.1'",
-    "deploy": "node_modules/serve/bin/serve.js -s build"    
+    "watch": "cross-env BABEL_ENV=dev node node_modules/webpack-dev-server/bin/webpack-dev-server.js --config ./scripts/webpack.config.js --colors --no-info --env.env='dev' --env.version='0.0.1-test'",
+    "build": "cross-env BABEL_ENV=prod node node_modules/webpack/bin/webpack.js --config ./scripts/webpack.config.js --progress --profile --colors --env.env='prod' --env.version='0.0.1'",
+    "deploy": "node_modules/serve/bin/serve.js -s build"
   },
   "author": "",
   "license": "ISC",
@@ -26,6 +26,7 @@
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^0.1.17",
     "compression-webpack-plugin": "^1.0.1",
+    "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
     "eslint": "^4.12.1",
     "eslint-config-airbnb": "^16.1.0",
